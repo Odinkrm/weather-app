@@ -31,11 +31,17 @@ function updateWeather(response) {
     response.data.main.temp
   );
   let currentWindSpeed = Math.round((response.data.wind.speed * 18) / 5);
-  document.querySelector("#wind");.innerHTML = `Wind Speed: ${currentWindSpeed}km/hr`;
+  document.querySelector(
+    "#wind"
+  ).innerHTML = `Wind Speed: ${currentWindSpeed}km/hr`;
   let currentHumidity = response.data.main.humidity;
-  document.querySelector("#humidity").innerHTML = `Humidity: ${currentHumidity}%`;
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `Humidity: ${currentHumidity}%`;
   let currentFeelsLike = Math.round(response.data.main.feels_like);
-  document.querySelector("#feels-like").innerHTML = `Feels Like: ${currentFeelsLike}°C`;
+  document.querySelector(
+    "#feels-like"
+  ).innerHTML = `Feels Like: ${currentFeelsLike}°C`;
 }
 // Constructing the weather api url for the searched city
 function updateCity(event) {
