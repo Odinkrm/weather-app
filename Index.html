@@ -19,88 +19,96 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div class="d-flex flex-row-reverse">
-          <div class="search-bar">
-            <form class="search-form">
-              <input
-                id="search-input"
-                type="search"
-                placeholder="Search for a city"
-                aria-label="Search"
-                autofocus="on"
-              />
-              <button id="submit-button" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-            <ul class="cities">
-              <li>
-                <a href="#" id="current-city"
-                  ><i class="fa-solid fa-location-dot"></i> Current city</a
-                >
-              </li>
-              <li><a href="#">Tehran</a></li>
-              <li><a href="#">Isfahan</a></li>
+      <div class="container-contents">
+        <div class="row">
+          <div class="d-flex flex-row-reverse">
+            <div class="search-bar">
+              <form class="search-form">
+                <input
+                  id="search-input"
+                  type="search"
+                  placeholder="Search for a city"
+                  aria-label="Search"
+                  autofocus="on"
+                />
+                <button id="submit-button" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+              <ul class="cities">
+                <li>
+                  <a href="#" id="current-city"
+                    ><i class="fa-solid fa-location-dot"></i> Current city</a
+                  >
+                </li>
+                <li><a href="#">Tehran</a></li>
+                <li><a href="#">Isfahan</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 weather-icon">
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col-sm-6 weather-info">
+            <h1 id="city-name">Tabriz</h1>
+            <h2 id="current-time">Friday 22:00</h2>
+            <h2 id="weather-description">Rainy</h2>
+          </div>
+          <div class="col-sm-5 more-info">
+            <h2 id="temperature">17</h2>
+            <span class="units">
+              <a href="#" id="in-celsius"> °C </a>
+              <span>|</span>
+              <a href="#" id="in-fahrenheit"> °F </a>
+            </span>
+            <ul>
+              <li id="feels-like">Feels like: 18°C</li>
+              <li id="wind">Wind Speed: 5km/h</li>
+              <li id="humidity">Humidity: 81%</li>
             </ul>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4 weather-icon">
-          <i class="fa-solid fa-cloud-showers-heavy"></i>
+        <hr />
+        <div class="row d-flex justify-content-around">
+          <div class="col-2 other-days">
+            <h3>Sat</h3>
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+            <br />
+            <span>-1°</span>
+          </div>
+          <div class="col-2 other-days">
+            <h3>Sun</h3>
+            <i class="fa-solid fa-cloud-rain"></i>
+            <br /><span>1°</span>
+          </div>
+          <div class="col-2 other-days">
+            <h3>Mon</h3>
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+            <br />
+            <span>0°</span>
+          </div>
+          <div class="col-2 other-days">
+            <h3>Tue</h3>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br /><span>5°</span>
+          </div>
+          <div class="col-2 other-days">
+            <h3>Wed</h3>
+            <i class="fa-solid fa-sun"></i>
+            <br /><span>10°</span>
+          </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-between">
-        <div class="col-sm-6 weather-info">
-          <h1 id="city-name">Tabriz</h1>
-          <h2 id="current-time">Friday 22:00</h2>
-          <h2 id="weather-description">Rainy</h2>
-        </div>
-        <div class="col-sm-5 more-info">
-          <h2 id="temperature">17</h2>
-          <span class="units">
-            <a href="#" id="in-celsius"> °C </a>
-            <span>|</span>
-            <a href="#" id="in-fahrenheit"> °F </a>
-          </span>
-          <ul>
-            <li id="feels-like">Feels like: 18°C</li>
-            <li id="wind">Wind Speed: 5km/h</li>
-            <li id="humidity">Humidity: 81%</li>
-          </ul>
-        </div>
-      </div>
-      <hr />
-      <div class="row d-flex justify-content-around">
-        <div class="col-2 other-days">
-          <h3>Sat</h3>
-          <i class="fa-solid fa-cloud-showers-heavy"></i>
-          <br />
-          <span>-1°</span>
-        </div>
-        <div class="col-2 other-days">
-          <h3>Sun</h3>
-          <i class="fa-solid fa-cloud-rain"></i>
-          <br /><span>1°</span>
-        </div>
-        <div class="col-2 other-days">
-          <h3>Mon</h3>
-          <i class="fa-solid fa-cloud-sun-rain"></i>
-          <br />
-          <span>0°</span>
-        </div>
-        <div class="col-2 other-days">
-          <h3>Tue</h3>
-          <i class="fa-solid fa-cloud-sun"></i>
-          <br /><span>5°</span>
-        </div>
-        <div class="col-2 other-days">
-          <h3>Wed</h3>
-          <i class="fa-solid fa-sun"></i>
-          <br /><span>10°</span>
-        </div>
-      </div>
+      <footer>
+        <span
+          ><a href="https://github.com/Odinkrm/weather-app">Open-source code</a>
+          by Asal Karimi</span
+        >
+      </footer>
     </div>
     <script src="src/index.js"></script>
   </body>

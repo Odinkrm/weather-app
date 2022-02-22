@@ -3,10 +3,12 @@ body {
 }
 
 .container {
+  max-width: 800px;
+}
+.container-contents {
   padding: 30px;
   margin: 20px auto;
   border: 1px solid #bfc3cb;
-  max-width: 800px;
   border-radius: 10px;
 }
 a {
@@ -50,7 +52,7 @@ ul li a:hover {
   border: none;
   font-size: 23px;
   position: absolute;
-  right: 390px;
+  right: 400px;
   top: 36px;
   padding: 16px;
 }
@@ -126,4 +128,7 @@ hr {
 .other-days span {
   color: #939aa9;
   font-size: 20px;
+}
+footer {
+  margin-bottom: 30px;
 }
