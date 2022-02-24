@@ -14,6 +14,10 @@ body {
 a {
   text-decoration: none;
 }
+.not-active-link {
+  color: #5a6275 !important;
+  cursor: default;
+}
 .cities,
 ul {
   display: block;

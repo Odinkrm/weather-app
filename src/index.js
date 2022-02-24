@@ -30,6 +30,7 @@ function updateWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemperature = Math.round(response.data.main.temp);
   let currentWindSpeed = Math.round((response.data.wind.speed * 18) / 5);
   document.querySelector(
     "#wind"
@@ -43,6 +44,7 @@ function updateWeather(response) {
     "#feels-like"
   ).innerHTML = `Feels Like: ${currentFeelsLike}°C`;
 }
+let celsiusTemperature = null;
 // Constructing the weather api url for the searched city
 function updateCity(event) {
   event.preventDefault();
@@ -74,6 +76,8 @@ function converToCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round((temperature.innerHTML - 32) * (5 / 9));
+  document.querySelector("#in-fahrenheit").classList.remove("not-active-link");
+  document.querySelector("#in-celsius").classList.add("not-active-link");
 }
 let inCelsius = document.querySelector("#in-celsius");
 inCelsius.addEventListener("click", converToCelsius);
@@ -81,7 +85,16 @@ inCelsius.addEventListener("click", converToCelsius);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round((9 / 5) * temperature.innerHTML + 32);
+  temperature.innerHTML = Math.round((9 / 5) * celsiusTemperature + 32);
+  document.querySelector("#in-fahrenheit").classList.add("not-active-link");
+  document.querySelector("#in-celsius").classList.remove("not-active-link");
 }
 let inFahrenheit = document.querySelector("#in-fahrenheit");
 inFahrenheit.addEventListener("click", convertToFahrenheit);
+
+function defaultCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(updateWeather);
+}
+defaultCity("las vegas");
