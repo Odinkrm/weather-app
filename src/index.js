@@ -24,6 +24,12 @@ function timeFormat(currentTime) {
 timeFormat(new Date());
 // Updating weather info & city name on the website
 function updateWeather(response) {
+  let weatherIcon = document.querySelector(".weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;

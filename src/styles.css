@@ -66,9 +66,7 @@ ul li a:hover {
 }
 
 .weather-icon {
-  font-size: 120px;
-  color: skyblue;
-  margin-left: 20px;
+  width: 60%;
 }
 .weather-info {
   margin-left: 20px;
