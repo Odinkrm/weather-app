@@ -64,7 +64,7 @@ let submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", updateCity);
 // Constructing the weather api url for the current city with geolocation
 function currentCity(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "c77c0f857560425c32ee92917087a412";
   let units = "metric";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -99,7 +99,7 @@ let inFahrenheit = document.querySelector("#in-fahrenheit");
 inFahrenheit.addEventListener("click", convertToFahrenheit);
 
 function defaultCity(city) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "c77c0f857560425c32ee92917087a412";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
