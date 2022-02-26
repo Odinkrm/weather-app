@@ -21,6 +21,9 @@ a {
 .search-bar {
   width: 50%;
 }
+.search-form {
+  position: relative;
+}
 
 #submit-button {
   color: #42a5f5;
@@ -28,9 +31,9 @@ a {
   border: none;
   font-size: 23px;
   position: absolute;
-  right: 400px;
-  top: 36px;
-  padding: 16px;
+  right: 2px;
+  top: -8px;
+  padding: 10px;
 }
 #search-input {
   width: 100%;
