@@ -22,6 +22,44 @@ function timeFormat(currentTime) {
   h2.innerHTML = `${days[day]} ${hour}:${minute}`;
 }
 timeFormat(new Date());
+//Daily weather forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day + 1];
+}
+function updateForcast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
+  let forecastHTML = ` <div class="row d-flex justify-content-around">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2 other-days">
+            <h3>${formatDay(forecastDay.dt)}</h3>
+            <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt="weather-icon"
+                  />
+            <br />
+            <span> ${Math.round(forecastDay.temp.day)}°</span>
+          </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector("#daily-forcast").innerHTML = forecastHTML;
+}
+function getCoords(coordinates) {
+  let apiKey = "c77c0f857560425c32ee92917087a412";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(updateForcast);
+}
 // Updating weather info & city name on the website
 function updateWeather(response) {
   let weatherIcon = document.querySelector(".weather-icon");
@@ -49,6 +87,8 @@ function updateWeather(response) {
   document.querySelector(
     "#feels-like"
   ).innerHTML = `Feels Like: ${currentFeelsLike}°C`;
+
+  getCoords(response.data.coord);
 }
 let celsiusTemperature = null;
 // Constructing the weather api url for the searched city
