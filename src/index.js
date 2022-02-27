@@ -77,27 +77,8 @@ function getCurrentPosition(event) {
 }
 let currentCityButton = document.querySelector("#current-city");
 currentCityButton.addEventListener("click", getCurrentPosition);
-// Converting unit to Celsius
-function converToCelsius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round((temperature.innerHTML - 32) * (5 / 9));
-  document.querySelector("#in-fahrenheit").classList.remove("not-active-link");
-  document.querySelector("#in-celsius").classList.add("not-active-link");
-}
-let inCelsius = document.querySelector("#in-celsius");
-inCelsius.addEventListener("click", converToCelsius);
-// Converting unit to Fahrenheit
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round((9 / 5) * celsiusTemperature + 32);
-  document.querySelector("#in-fahrenheit").classList.add("not-active-link");
-  document.querySelector("#in-celsius").classList.remove("not-active-link");
-}
-let inFahrenheit = document.querySelector("#in-fahrenheit");
-inFahrenheit.addEventListener("click", convertToFahrenheit);
 
+// Setting Las Vegas as default loading city to display
 function defaultCity(city) {
   let apiKey = "c77c0f857560425c32ee92917087a412";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
