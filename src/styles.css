@@ -1,14 +1,15 @@
 body {
-  color: #5a6275;
+  background-color: #e8e8e8;
 }
 
 .container {
   max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 .container-contents {
   padding: 30px;
   margin: 20px auto;
-  border: 1px solid #bfc3cb;
   border-radius: 10px;
 }
 a {

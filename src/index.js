@@ -27,8 +27,11 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day + 1];
+  if (day === 6) {
+    return days[0];
+  } else {
+    return days[day + 1];
+  }
 }
 function updateForcast(response) {
   let forecast = response.data.daily;
